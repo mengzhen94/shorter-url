@@ -13,8 +13,12 @@ module.exports = function(app, db){
 	}
 
 	app.get('/:num', function(req, res){
+		
+		//var num = process.env.APP_URL + req.params.num
+		//console.log("num : " + num)
 		var num = req.params.num
-		db.collection('sites').findOne({
+		if(num != 'favicon.ico'){
+			db.collection('sites').findOne({
 			"short_url" : +num
 		},function(err, data){
 			if(err) throw err
@@ -26,6 +30,8 @@ module.exports = function(app, db){
 				res.send("No such Site")
 			}
 		})
+		}
+		
 	})
 
 	app.get('/new/:url*', function(req, res){
