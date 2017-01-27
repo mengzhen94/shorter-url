@@ -16,7 +16,7 @@
     "ejs": "^2.5.5",
     "express": "^4.14.0",
     "foobar": "^1.1.0",
-    "mongodb": "v3.2.6",
+    "mongodb": "^2.1.4",
     "mongodb-core": "2.0"
 
   }
