@@ -5,7 +5,9 @@ var routes = require('./app/routes/index.js');
 var api = require('./app/api/redirect.js');
 
 var MongoClient = mongo.MongoClient;
-var url = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/data';      
+var url = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/data'; 
+
+
 MongoClient.connect(url, function (err, db) {
   	if (err) {
     	console.log('Unable to connect to the mongoDB server. Error:', err);
@@ -21,7 +23,7 @@ MongoClient.connect(url, function (err, db) {
 	app.listen(port, function() {
     	console.log("ShorterUrl App listening on port "+ port);
 	});
-	
+
 });
 
 
